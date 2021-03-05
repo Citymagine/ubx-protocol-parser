@@ -144,7 +144,7 @@ export default class UBXProtocolParser extends Transform {
         debug(`Unknown byte "${byte}" received at state "${this.packetState}"`);
       }
     }
-
+    this.buffer = data.slice(data.length); //cleanup already parsed buffer
     cb();
   }
 
